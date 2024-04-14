@@ -1,6 +1,18 @@
 # subscript
+Simple script to automate finding subdomains steps using python.
 
 # Will be updated soon
+
+## TODO
+
+- [ ] Make README file better :D
+- [ ] Add args for cli usage
+- [ ] Save target data in folders named with target domain
+- [ ] Replace `shuffledns` with `puredns`
+- [ ] Support `puncia`
+- [ ] Support `crt.sh`
+- [ ] Support `abuseipdb`
+- [ ] Support `dnsgen`
 
 ## Installation
 

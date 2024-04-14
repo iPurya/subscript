@@ -5,12 +5,13 @@ import json
 import concurrent.futures
 from telebot import TeleBot
 
-bot = TeleBot("6568272192:AAHvZqvDadJCsRgmZuodGwNy5DMgWO7-flw")
-CHANNEL = -1002110734507
+TOKEN = "6568272191:AAHvZqvDadJCsRgmZuodGwNy5DMgWO7-flw"
+CHANNEL = -1002110734501
 
 TARGET = "starbucks.com"
 CHR = 3
 
+bot = TeleBot(TOKEN)
 all_subs = set()
 executor = concurrent.futures.ThreadPoolExecutor(max_workers=100)
 
@@ -49,14 +50,14 @@ def httpx(filename):
     subprocess.call(cmd)
 
 tasks = []
-#tasks.append(executor.submit(subfinder, TARGET))
-#tasks.append(executor.submit(findomain, TARGET))
+tasks.append(executor.submit(subfinder, TARGET))
+tasks.append(executor.submit(findomain, TARGET))
 
 
 for future in concurrent.futures.as_completed(tasks):
     print(future.result(), len(all_subs))
 
-#writelines("allsubs.txt", all_subs)
+writelines("allsubs.txt", all_subs)
 httpx("allsubs.txt")
 
 alldata=[]
